@@ -8,7 +8,8 @@
         images: [
           'Images/Infographics_annualreport_overview_landscape.jpg',
           'Images/Infographics_fabric.jpg',
-          'Images/Infographics_pictures.jpg'
+          'Images/Infographics_pictures.jpg',
+          'Images/Infographics_annualreport_flip.mp4'
         ]
       },
       { 
@@ -113,11 +114,18 @@
       
       const servicesHTML = project.services.map(s => `<span>${s}</span>`).join('');
       const imagesHTML = project.images.map((img, idx) => {
+        const isVideo = img.toLowerCase().endsWith('.mp4');
         // Specifically for the second and third images of the Infographics project (ID 1, index 1 & 2)
         // we remove the height constraint to allow them to be 1920x1080 (16:9)
-        const isTarget = project.id === 1 && (idx === 1 || idx === 2);
+        const isTarget = project.id === 1 && (idx === 1 || idx === 2 || idx === 3);
         const heightClass = isTarget ? 'h-auto' : 'md:h-[90vh]';
         
+        if (isVideo) {
+          return `
+            <video src="${img}" class="w-full ${heightClass} object-cover bg-zinc-200 reveal-item" autoplay loop muted playsinline></video>
+          `;
+        }
+
         return `
           <img src="${img}" alt="${project.category} view ${idx + 1}" class="w-full ${heightClass} object-cover bg-zinc-200 reveal-item" loading="lazy" />
         `;
