@@ -19,8 +19,11 @@
         description: 'Gastromario is a high-quality café based in Rome. For this project, I developed a cohesive brand identity rooted in the brand’s tone of voice, translating its refined yet welcoming personality into a distinctive visual system.\n\nI created a series of custom illustrations to elevate the brand’s storytelling and highlight its artisanal character. Combined with thoughtful typography and a balanced layout, the illustrations form a cohesive visual language that reflects the café’s quality and atmosphere while ensuring consistency across all touchpoints.',
         images: [
           'Images/Gastromario/BrandIdentity_Gastromario.png',
-          'unknown',
-          'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop'
+          ['Images/Gastromario/BrandIdentity_Gastromario-06.png', 'Images/Gastromario/BrandIdentity_Gastromario-05.png'],
+          'Images/Gastromario/BrandIdentity_Gastromario-07.png',
+          ['Images/Gastromario/BrandIdentity_Gastromario-04.png', 'Images/Gastromario/BrandIdentity_Gastromario-03.png'],
+          'Images/Gastromario/BrandIdentity_Gastromario-08.png',
+          ['Images/Gastromario/BrandIdentity_Gastromario-02.png', 'Images/Gastromario/BrandIdentity_Gastromario-01.png']
         ]
       },
       { 
@@ -113,11 +116,30 @@
       const container = document.getElementById('view-project-detail');
       
       const servicesHTML = project.services.map(s => `<span>${s}</span>`).join('');
-      const imagesHTML = project.images.map((img, idx) => {
+      const imagesHTML = project.images.map((item, idx) => {
+        if (Array.isArray(item)) {
+          // Row with multiple images (specifically for Brand Identity layout)
+          const rowItems = item.map((img, subIdx) => {
+            let colSpan = 'md:col-span-6';
+            if (project.id === 2) {
+               if (idx === 1) colSpan = subIdx === 0 ? 'md:col-span-5' : 'md:col-span-7'; // Row 2
+               if (idx === 3) colSpan = subIdx === 0 ? 'md:col-span-7' : 'md:col-span-5'; // Row 4
+               if (idx === 5) colSpan = subIdx === 0 ? 'md:col-span-5' : 'md:col-span-7'; // Row 6
+            }
+            return `
+              <div class="col-span-1 ${colSpan} reveal-item">
+                <img src="${img}" alt="${project.category} view ${idx + 1}-${subIdx + 1}" class="w-full h-full object-cover bg-zinc-200" loading="lazy" />
+              </div>
+            `;
+          }).join('');
+          return `<div class="grid grid-cols-1 md:grid-cols-12 gap-[10px] w-full">${rowItems}</div>`;
+        }
+
+        const img = item;
         const isVideo = img.toLowerCase().endsWith('.mp4');
         // Specifically for the second and third images of the Infographics project (ID 1, index 1 & 2)
         // we remove the height constraint to allow them to be 1920x1080 (16:9)
-        const isTarget = project.id === 1 && (idx === 1 || idx === 2 || idx === 3);
+        const isTarget = (project.id === 1 && (idx === 1 || idx === 2 || idx === 3)) || (project.id === 2);
         const heightClass = isTarget ? 'h-auto' : 'md:h-[90vh]';
         
         if (isVideo) {
