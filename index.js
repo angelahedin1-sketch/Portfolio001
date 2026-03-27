@@ -38,7 +38,7 @@
         ]
       },
       { 
-        id: 4, category: 'Photography', year: '2026', client: 'Cereal Magazine',
+        id: 4, category: 'Photography', year: '2026', client: 'School Project',
         services: ['brand identity', 'copywriting', 'animations'],
         img: 'https://images.unsplash.com/photo-1554046920-90dcac824b43?q=80&w=1200&auto=format&fit=crop',
         description: 'An editorial series capturing brutalist and modernist architecture around Europe. Shot entirely on medium format film, focusing on shadows, leading lines, and concrete textures.',
@@ -72,16 +72,33 @@
 
     // --- INIT ---
     document.addEventListener('DOMContentLoaded', () => {
-      renderProjectsList();
-      setupIntersectionObservers();
-      setupScrollListener();
-      updateNavState();
+      // Check for view parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const view = urlParams.get('view');
+      
+      if (view === 'about') {
+        navigate('about');
+      } else {
+        renderProjectsList();
+        setupIntersectionObservers();
+        setupScrollListener();
+        updateNavState();
+      }
     });
 
     // --- RENDERING ---
     function renderProjectsList() {
       const container = document.getElementById('projects-container');
+      if (!container) return;
       container.innerHTML = '';
+
+      const projectFiles = [
+        'infographics.html',
+        'gastromario.html',
+        'maison-margiela.html',
+        'Photography.html',
+        'a24-films.html'
+      ];
 
       PROJECTS.forEach((project, index) => {
         const projectHTML = `
@@ -89,7 +106,7 @@
             <!-- Mobile text -->
             <div class="md:hidden flex justify-between items-center mb-4 text-[10px] font-medium font-dm normal-case px-2 w-full">
               <div class="flex gap-2">
-                <span class="text-zinc-500">Category</span>
+                <span class="text-zinc-500">Project</span>
                 <span>${project.category}</span>
               </div>
               <div class="flex gap-2">
@@ -99,129 +116,52 @@
             </div>
 
             <!-- Image -->
-            <div 
+            <a 
+              href="${projectFiles[index]}"
               class="col-span-1 md:col-start-3 md:col-span-4 aspect-[4/5] w-full bg-zinc-200 overflow-hidden relative shadow-sm cursor-pointer reveal-item"
-              onclick="openProject(${index})"
             >
               <img src="${project.img}" alt="${project.category}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
               <div class="absolute inset-0 bg-black/5 transition-colors duration-300 group-hover:bg-black/10"></div>
-            </div>
+            </a>
           </div>
         `;
         container.insertAdjacentHTML('beforeend', projectHTML);
       });
     }
 
-    function renderProjectDetail(project) {
-      const container = document.getElementById('view-project-detail');
-      
-      const servicesHTML = project.services.map(s => `<span>${s}</span>`).join('');
-      const imagesHTML = project.images.map((item, idx) => {
-        if (Array.isArray(item)) {
-          // Row with multiple images (specifically for Brand Identity layout)
-          const rowItems = item.map((img, subIdx) => {
-            let colSpan = 'md:col-span-6';
-            if (project.id === 2) {
-               if (idx === 1) colSpan = subIdx === 0 ? 'md:col-span-5' : 'md:col-span-7'; // Row 2
-               if (idx === 3) colSpan = subIdx === 0 ? 'md:col-span-7' : 'md:col-span-5'; // Row 4
-               if (idx === 5) colSpan = subIdx === 0 ? 'md:col-span-5' : 'md:col-span-7'; // Row 6
-            }
-            return `
-              <div class="col-span-1 ${colSpan} reveal-item">
-                <img src="${img}" alt="${project.category} view ${idx + 1}-${subIdx + 1}" class="w-full h-full object-cover bg-zinc-200" loading="lazy" />
-              </div>
-            `;
-          }).join('');
-          return `<div class="grid grid-cols-1 md:grid-cols-12 gap-[10px] w-full">${rowItems}</div>`;
-        }
-
-        const img = item;
-        const isVideo = img.toLowerCase().endsWith('.mp4');
-        // Specifically for the second and third images of the Infographics project (ID 1, index 1 & 2)
-        // we remove the height constraint to allow them to be 1920x1080 (16:9)
-        const isTarget = (project.id === 1 && (idx === 1 || idx === 2 || idx === 3)) || (project.id === 2);
-        const heightClass = isTarget ? 'h-auto' : 'md:h-[90vh]';
-        
-        if (isVideo) {
-          return `
-            <video src="${img}" class="w-full ${heightClass} object-cover bg-zinc-200 reveal-item" autoplay loop muted playsinline></video>
-          `;
-        }
-
-        return `
-          <img src="${img}" alt="${project.category} view ${idx + 1}" class="w-full ${heightClass} object-cover bg-zinc-200 reveal-item" loading="lazy" />
-        `;
-      }).join('');
-
-      container.innerHTML = `
-        <!-- Top Information Grid -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-12 gap-y-12 gap-x-[10px] mb-16 md:mb-24 text-[10px] font-medium font-dm normal-case">
-          <!-- Category & Description -->
-          <div class="col-span-1 md:col-span-4 flex gap-4 items-start">
-            <span class="text-zinc-500">Category</span>
-            <div class="flex flex-col gap-4">
-              <span class="text-zinc-900">${project.category}</span>
-              <p class="text-zinc-500 leading-relaxed max-w-[280px] whitespace-pre-line">${project.description}</p>
-            </div>
-          </div>
-          <!-- Services -->
-          <div class="col-span-1 md:col-span-3 flex gap-4 items-start">
-            <span class="text-zinc-500">Services</span>
-            <div class="flex flex-col gap-1 text-zinc-900">${servicesHTML}</div>
-          </div>
-          <!-- Client -->
-          <div class="col-span-1 md:col-span-3 flex gap-4 items-start">
-            <span class="text-zinc-500">Client</span>
-            <span class="text-zinc-900">${project.client}</span>
-          </div>
-          <!-- Year -->
-          <div class="col-span-1 md:col-span-2 flex gap-4 items-start">
-            <span class="text-zinc-500">Year</span>
-            <span class="text-zinc-900">${project.year}</span>
-          </div>
-        </div>
-
-        <!-- Vertical Image Sequence -->
-        <div class="w-full flex flex-col gap-[10px] pb-8 md:pb-12">
-          ${imagesHTML}
-        </div>
-      `;
-    }
-
     // --- NAVIGATION LOGIC ---
     window.navigate = function(route) {
-      selectedProjectIndex = null;
-      currentRoute = route;
-      
-      // Toggle Views
-      document.getElementById('view-home').className = route === 'home' ? 'block' : 'hidden';
-      document.getElementById('view-about').className = route === 'about' ? 'block' : 'hidden';
-      document.getElementById('view-project-detail').className = 'hidden flex-col';
+      if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+        currentRoute = route;
+        
+        // Toggle Views
+        const viewHome = document.getElementById('view-home');
+        const viewAbout = document.getElementById('view-about');
+        
+        if (viewHome) viewHome.className = route === 'home' ? 'block' : 'hidden';
+        if (viewAbout) viewAbout.className = route === 'about' ? 'block' : 'hidden';
 
-      // Reset scroll & nav visibility
-      window.scrollTo({ top: 0, behavior: 'instant' });
-      document.getElementById('main-nav').classList.replace('-translate-y-full', 'translate-y-0');
-      
-      updateNavState();
-      triggerReveals();
+        // Reset scroll & nav visibility
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        document.getElementById('main-nav').classList.replace('-translate-y-full', 'translate-y-0');
+        
+        updateNavState();
+        triggerReveals();
+      } else {
+        // If on a project page, navigate back to index with the right view
+        window.location.href = route === 'home' ? 'index.html' : 'index.html?view=about';
+      }
     };
 
     window.openProject = function(index) {
-      selectedProjectIndex = index;
-      const project = PROJECTS[index];
-      
-      // Toggle Views
-      document.getElementById('view-home').className = 'hidden';
-      document.getElementById('view-about').className = 'hidden';
-      
-      const detailView = document.getElementById('view-project-detail');
-      detailView.className = 'flex min-h-screen w-full bg-[#f4f4f2] pt-32 pb-0 px-6 md:px-8 flex-col';
-      
-      renderProjectDetail(project);
-      updateNavState();
-      triggerReveals();
-      
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      const projectFiles = [
+        'infographics.html',
+        'gastromario.html',
+        'maison-margiela.html',
+        'Photography.html',
+        'a24-films.html'
+      ];
+      window.location.href = projectFiles[index];
     };
 
     function updateNavState() {
