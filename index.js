@@ -39,9 +39,9 @@
       },
       { 
         id: 4, category: 'Photography', year: '2026', client: 'School Project',
-        services: ['brand identity', 'copywriting', 'animations'],
-        img: 'https://images.unsplash.com/photo-1554046920-90dcac824b43?q=80&w=1200&auto=format&fit=crop',
-        description: 'An editorial series capturing brutalist and modernist architecture around Europe. Shot entirely on medium format film, focusing on shadows, leading lines, and concrete textures.',
+        services: ['Photography', 'Art Direction', 'Printing'],
+        img: 'Images/Photography/Photography_first.JPG',
+        description: 'For this project, the focus was on isolating the intricate, skeletal structures of nature and recontextualize them through a bold, primary color palette. As the Lead Photographer, I focused on capturing the fine details and depth of the branches, ensuring the red highlights felt luminous against the matte blue shadows.\n\nThe project culminated in a physical, accordion-fold print. My collaborator, handled the composition, strategically placing the images to create a continuous flow that changes as the viewer unfolds the piece. The final result is a fusion of Art Direction and precision Printing that explores the link between digital photography and physical art.',
         images: [
           'https://images.unsplash.com/photo-1554046920-90dcac824b43?q=80&w=1200&auto=format&fit=crop',
           'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop',
