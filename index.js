@@ -102,9 +102,9 @@
 
       PROJECTS.forEach((project, index) => {
         const projectHTML = `
-          <div data-index="${index}" class="project-item w-full px-6 md:px-8 grid grid-cols-1 md:grid-cols-12 gap-[10px] mb-[10px] last:mb-0 pointer-events-auto items-center group">
+          <div data-index="${index}" class="project-item w-full px-6 md:px-8 grid grid-cols-1 md:grid-cols-12 mb-[60px] last:mb-0 pointer-events-auto items-center group">
             <!-- Mobile text -->
-            <div class="md:hidden flex justify-between items-center mb-4 text-[10px] font-medium font-dm normal-case px-2 w-full">
+            <div class="md:hidden flex justify-between items-center mb-4 text-[12px] font-normal font-dm normal-case w-full">
               <div class="flex gap-2">
                 <span class="text-zinc-500">Project</span>
                 <span>${project.category}</span>
