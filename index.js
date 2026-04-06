@@ -29,12 +29,13 @@
       { 
         id: 3, category: 'Web design', year: '2026', client: 'Maison Margiela',
         services: ['brand identity', 'copywriting', 'animations'],
-        img: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1200&auto=format&fit=crop',
+        img: 'Images/Alfredo/Alfredo_07.jpg',
         description: 'Digital portfolio and e-commerce platform designed for an independent fashion label. The interface relies on horizontal scrolling and hidden navigation to let the photography lead the user experience.',
         images: [
-          'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1200&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop'
+          'Images/Alfredo/Alfredo_01.jpg',
+          ['Images/Alfredo/Alfredo_02.jpg', 'Images/Alfredo/Alfredo_03.jpg'],
+          ['Images/Alfredo/Alfredo_04.jpg', 'Images/Alfredo/Alfredo_05.jpg'],
+          ['Images/Alfredo/Alfredo_07.jpg', 'Images/Alfredo/Alfredo_06.jpg']
         ]
       },
       { 
@@ -95,7 +96,7 @@
       const projectFiles = [
         'infographics.html',
         'gastromario.html',
-        'maison-margiela.html',
+        'web-design.html',
         'Photography.html',
         'a24-films.html'
       ];
@@ -104,7 +105,7 @@
         const projectHTML = `
           <div data-index="${index}" class="project-item w-full px-6 md:px-8 grid grid-cols-1 md:grid-cols-12 mb-[60px] last:mb-0 pointer-events-auto items-center group">
             <!-- Mobile text -->
-            <div class="md:hidden flex justify-between items-center mb-4 text-[12px] font-normal font-dm normal-case w-full">
+            <div class="md:hidden flex justify-between items-center mb-4 text-[12px] font-medium font-dm normal-case w-full">
               <div class="flex gap-2">
                 <span class="text-zinc-500">Project</span>
                 <span>${project.category}</span>
@@ -157,7 +158,7 @@
       const projectFiles = [
         'infographics.html',
         'gastromario.html',
-        'maison-margiela.html',
+        'web-design.html',
         'Photography.html',
         'a24-films.html'
       ];
