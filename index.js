@@ -139,12 +139,19 @@
         const viewHome = document.getElementById('view-home');
         const viewAbout = document.getElementById('view-about');
         
-        if (viewHome) viewHome.className = route === 'home' ? 'block' : 'hidden';
-        if (viewAbout) viewAbout.className = route === 'about' ? 'block' : 'hidden';
+        if (viewHome) {
+          if (route === 'home') viewHome.classList.remove('hidden');
+          else viewHome.classList.add('hidden');
+        }
+        if (viewAbout) {
+          if (route === 'about') viewAbout.classList.remove('hidden');
+          else viewAbout.classList.add('hidden');
+        }
 
         // Reset scroll & nav visibility
         window.scrollTo({ top: 0, behavior: 'instant' });
-        document.getElementById('main-nav').classList.replace('-translate-y-full', 'translate-y-0');
+        document.getElementById('main-nav').classList.remove('-translate-y-full');
+        document.getElementById('main-nav').classList.add('translate-y-0');
         
         updateNavState();
         triggerReveals();
