@@ -1,7 +1,7 @@
 // --- DATA ---
     const PROJECTS = [
       { 
-        id: 1, category: 'Infographics', year: '2026', client: 'School Project',
+        id: 1, category: 'Annual Report', year: '2026', client: 'School Project',
         services: ['Annual Report, Editorial, Printing, Infographics'],
         img: 'Images/Infographics_annualreport_firstpage.png',
         description: 'This project focused on designing an annual report for the fictional fashion brand Aurea Group using a provided financial dataset. The goal was to translate complex information into a visually engaging and brand-aligned publication.\n\nTo reflect the fashion identity of the brand, I created many of the charts and graphs using fabric textures in Photoshop. A structured grid, refined typography, and clear hierarchy ensured readability while maintaining a strong visual concept.\n\nThe result is a balance between creativity and functionality, where data becomes part of the brand’s visual language rather than just supporting content.',
@@ -13,7 +13,7 @@
         ]
       },
       { 
-        id: 2, category: 'Brand identity', year: '2026', client: 'Gastromario',
+        id: 2, category: 'Brand Identity', year: '2026', client: 'Gastromario',
         services: ['Brand Identity, Logo design'],
         img: 'Images/Gastromario/BrandIdentity_Gastromario.png',
         description: 'Gastromario is a high-quality café based in Rome. For this project, I developed a cohesive brand identity rooted in the brand’s tone of voice, translating its refined yet welcoming personality into a distinctive visual system.\n\nI created a series of custom illustrations to elevate the brand’s storytelling and highlight its artisanal character. Combined with thoughtful typography and a balanced layout, the illustrations form a cohesive visual language that reflects the café’s quality and atmosphere while ensuring consistency across all touchpoints.',
@@ -27,7 +27,7 @@
         ]
       },
       { 
-        id: 3, category: 'Web design', year: '2026', client: 'Maison Margiela',
+        id: 3, category: 'Web Design', year: '2026', client: 'Maison Margiela',
         services: ['brand identity', 'copywriting', 'animations'],
         img: 'Images/Alfredo/Alfredo_07.jpg',
         description: 'Digital portfolio and e-commerce platform designed for an independent fashion label. The interface relies on horizontal scrolling and hidden navigation to let the photography lead the user experience.',
@@ -50,14 +50,15 @@
         ]
       },
       { 
-        id: 5, category: 'Movie posters', year: '2026', client: 'A24 Films',
-        services: ['brand identity', 'copywriting', 'animations'],
-        img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1200&auto=format&fit=crop',
-        description: 'A series of conceptual posters designed for an independent film festival. Heavily inspired by 1960s international typographic style, relying on strong diagonal lines and bold color blocking.',
+        id: 5, category: 'Label Design', year: '2026', client: 'Disaronno',
+        services: ['Typography, Brand Identity, Packaging'],
+        img: 'Images/Typgraphy/Typography_Disaronno_01.jpg',
+        description: 'This design honors Disaronno’s heritage by magnifying the central coat of arms into a bold, golden centerpiece that wraps around the glass, embracing the bottle\'s iconic silhouette. \n\nTo revitalize the brand’s identity for a new generation, the label is paired with Adelia by Letters from Sweden, featuring letterforms \nmanually altered to reflect Italian typographic history.',
         images: [
-          'https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1200&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1200&auto=format&fit=crop'
+          'Images/Typgraphy/Typography_Disaronno_01.jpg',
+          ['Images/Typgraphy/Typography_Disaronno-02.jpg', 'Images/Typgraphy/Typography_Disaronno-03.jpg'],
+          'Images/Typgraphy/Typography_Disaronno-04.jpg',
+          'Images/Typgraphy/Typography_Disaronno-05.jpg'
         ]
       }
     ];
@@ -98,14 +99,14 @@
         'gastromario.html',
         'web-design.html',
         'Photography.html',
-        'a24-films.html'
+        'disaronno.html'
       ];
 
       PROJECTS.forEach((project, index) => {
         const projectHTML = `
-          <div data-index="${index}" class="project-item w-full px-6 md:px-8 grid grid-cols-1 md:grid-cols-12 mb-[60px] last:mb-0 pointer-events-auto items-center group">
+          <div data-index="${index}" class="project-item w-full px-6 md:px-8 grid grid-cols-4 md:grid-cols-12 gap-5 md:gap-[10px] mb-[60px] last:mb-0 pointer-events-auto items-center group">
             <!-- Mobile text -->
-            <div class="md:hidden flex justify-between items-center mb-4 text-[12px] font-medium font-dm normal-case w-full">
+            <div class="col-span-4 md:hidden flex justify-between items-center mb-4 text-[12px] font-medium font-dm normal-case w-full">
               <div class="flex gap-2">
                 <span class="text-zinc-500">Project</span>
                 <span>${project.category}</span>
@@ -119,7 +120,7 @@
             <!-- Image -->
             <a 
               href="${projectFiles[index]}"
-              class="col-span-1 md:col-start-3 md:col-span-4 aspect-[4/5] w-full bg-zinc-200 overflow-hidden relative shadow-sm cursor-pointer reveal-item"
+              class="col-span-4 md:col-start-3 md:col-span-4 aspect-[4/5] w-full bg-zinc-200 overflow-hidden relative shadow-sm cursor-pointer reveal-item"
             >
               <img src="${project.img}" alt="${project.category}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
               <div class="absolute inset-0 bg-black/5 transition-colors duration-300 group-hover:bg-black/10"></div>
@@ -167,7 +168,7 @@
         'gastromario.html',
         'web-design.html',
         'Photography.html',
-        'a24-films.html'
+        'disaronno.html'
       ];
       window.location.href = projectFiles[index];
     };
