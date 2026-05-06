@@ -25,3 +25,60 @@
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
     }
+
+    /* Mobile footer social divider */
+    .footer-social-divider {
+      display: inline-block;
+      width: 1px;
+      height: 10px;
+      background-color: #a1a1aa; /* zinc-400 */
+      margin: 0 4px;
+      vertical-align: middle;
+    }
+
+    /* Mobile footer: two-column two-row layout */
+    .footer-mobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      border-top: 1px solid #d4d4d8;
+    }
+    .footer-mobile .footer-left,
+    .footer-mobile .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .footer-mobile .footer-right {
+      align-items: flex-end;
+    }
+    @media (min-width: 768px) {
+      .footer-mobile {
+        display: none;
+      }
+    }
+
+    /* Fixed sidebar layout for desktop project pages */
+    @media (min-width: 768px) {
+      .project-layout {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 8rem;
+        padding-bottom: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      .project-sidebar {
+        position: sticky;
+        top: 8rem;
+        width: 280px;
+        flex-shrink: 0;
+        margin-right: 10px;
+      }
+      .project-images-col {
+        flex: 1;
+        min-width: 0;
+      }
+    }

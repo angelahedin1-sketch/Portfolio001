@@ -54,7 +54,7 @@
             <!-- Category text in Column 8 & 9 -->
             <div class="col-start-8 col-span-2 flex gap-3 text-[12px] font-medium font-dm normal-case text-zinc-900 pointer-events-auto">
               <span class="text-zinc-500">Project</span>
-              <span id="sticky-category">Annual Report</span>
+              <span id="sticky-category">Infographics</span>
             </div>
             <!-- Year text in Column 10 & 11 -->
             <div class="col-start-10 col-span-2 flex gap-3 text-[12px] font-medium font-dm normal-case text-zinc-900 pointer-events-auto">
@@ -87,13 +87,29 @@
       </button>
     </div>
 
-    <footer class="h-[48px] border-t border-zinc-300 w-full flex flex-row justify-between items-center gap-4 text-[12px] font-light font-dm normal-case text-zinc-500 overflow-x-auto no-scrollbar whitespace-nowrap">
+    <!-- Mobile footer -->
+    <div class="footer-mobile font-dm text-[12px] font-light normal-case text-zinc-500">
+      <div class="footer-left">
+        <span>&copy; 2026 Angela Hedin</span>
+        <span>Rome/Gothenburg</span>
+      </div>
+      <div class="footer-right">
+        <a href="mailto:angelinamh@me.com" class="hover:text-zinc-900 transition-colors">angelinamh@me.com</a>
+        <div class="flex items-center gap-1">
+          <a href="https://www.instagram.com/angelahedin?igsh=MWVmOWw3OGJvOXdiZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 transition-colors">Instagram</a>
+          <span class="footer-social-divider"></span>
+          <a href="https://www.linkedin.com/in/angela-hedin-234746194" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 transition-colors">Linkedin</a>
+        </div>
+      </div>
+    </div>
+    <!-- Desktop footer -->
+    <footer class="hidden md:flex h-[48px] border-t border-zinc-300 w-full flex-row justify-between items-center gap-4 text-[12px] font-light font-dm normal-case text-zinc-500 overflow-x-auto no-scrollbar whitespace-nowrap">
       <span>&copy; 2026 Angela Hedin</span>
       <span>Rome/Gothenburg</span>
       <a href="mailto:angelinamh@me.com" class="text-zinc-500 hover:text-zinc-900 transition-colors">angelinamh@me.com</a>
-      <div class="flex gap-4 md:gap-8">
-        <a href="https://www.instagram.com/angelahedin?igsh=MWVmOWw3OGJvOXdiZA%3D%3D&utm_source=qr"     href="https://example.com" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-zinc-900 transition-colors">Instagram</a>
-        <a href="https://www.linkedin.com/in/angela-hedin-234746194"    href="https://example.com" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-zinc-900 transition-colors">Linkedin</a>
+      <div class="flex gap-8">
+        <a href="https://www.instagram.com/angelahedin?igsh=MWVmOWw3OGJvOXdiZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-zinc-900 transition-colors">Instagram</a>
+        <a href="https://www.linkedin.com/in/angela-hedin-234746194" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-zinc-900 transition-colors">Linkedin</a>
       </div>
     </footer>
   </div>

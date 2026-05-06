@@ -1,4 +1,3 @@
-'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,87 +29,136 @@
     </nav>
   </header>
 
-  <!-- MAIN APP CONTAINER -->
-  <main id="view-project-detail" class="flex min-h-screen w-full bg-[#f4f4f2] pt-32 pb-0 px-6 md:px-8 flex-col">
-    <!-- Project Details Start -->
-    <!-- Top Information Grid -->
-    <div class="w-full grid grid-cols-4 md:grid-cols-12 gap-y-12 gap-x-5 md:gap-x-[10px] mb-16 md:mb-24 text-[12px] font-medium font-dm normal-case">
-      <!-- Project & Description -->
-      <div class="col-span-4 md:col-span-4 flex gap-4 items-start">
-        <span class="text-zinc-500">Project</span>
+  <!-- MOBILE LAYOUT -->
+  <main id="view-project-detail" class="md:hidden flex min-h-screen w-full bg-[#f4f4f2] pt-32 pb-0 px-6 flex-col">
+    <div class="w-full flex flex-col gap-y-12 mb-16 text-[12px] font-medium font-dm normal-case">
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Project</span>
         <div class="flex flex-col gap-4">
-          <span class="text-zinc-900" id="project-Project">Web design</span>
-          <p class="text-zinc-500 leading-relaxed max-w-[280px] whitespace-pre-line" id="project-description">This project is a UI/UX website redesign for Rome’s historic Alfredo alla Scrofa. The goal was to blend the restaurant’s heritage with a modern digital experience. I centered the redesign on Nielsen’s 10 Usability Heuristics, ensuring that the aesthetic remained functional, creating a layout that follows a narrative flow.
+          <span class="text-zinc-900">Web design</span>
+          <p class="text-zinc-500 leading-relaxed max-w-[280px] whitespace-pre-line">This project is a UI/UX website redesign for Rome's historic Alfredo alla Scrofa. The goal was to blend the restaurant's heritage with a modern digital experience. I centered the redesign on Nielsen's 10 Usability Heuristics, ensuring that the aesthetic remained functional, creating a layout that follows a narrative flow.
 
 <span class="italic">This is an independent student project and is not affiliated with or endorsed by Alfredo alla Scrofa.</span></p>
         </div>
       </div>
-      <!-- Services -->
-      <div class="col-span-4 md:col-span-3 flex gap-4 items-start">
-        <span class="text-zinc-500">Services</span>
-        <div class="flex flex-col gap-1 text-zinc-900" id="project-services">
-        <span>Web Design, UI/UX, Brand Identity</span>
-        </div>
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Services</span>
+        <span class="text-zinc-900">Web Design, UI/UX, Brand Identity</span>
       </div>
-      <!-- Client -->
-      <div class="col-span-4 md:col-span-3 flex gap-4 items-start">
-        <span class="text-zinc-500">Client</span>
-        <span class="text-zinc-900" id="project-client">School project</span>
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Client</span>
+        <span class="text-zinc-900">School project</span>
       </div>
-      <!-- Year -->
-      <div class="col-span-4 md:col-span-2 flex gap-4 items-start">
-        <span class="text-zinc-500">Year</span>
-        <span class="text-zinc-900" id="project-year">2026</span>
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Year</span>
+        <span class="text-zinc-900">2026</span>
       </div>
     </div>
-
-    <!-- Vertical Image Sequence -->
-    <div class="w-full grid grid-cols-4 md:grid-cols-12 gap-5 md:gap-[10px] pb-8 md:pb-12" id="project-images">
-      <!-- Image 01 - Full Width -->
-      <img src="Images/Alfredo/Alfredo_01.jpg" alt="Web design view 1" class="col-span-4 md:col-span-12 w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
-
-      <!-- Left Column: 02, 04, 07 -->
-      <div class="col-span-4 md:col-span-6 flex flex-col gap-5 md:gap-[10px]">
-        <div class="reveal-item">
-          <img src="Images/Alfredo/Alfredo_02.jpg" alt="Web design view 2" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
-        </div>
-        <div class="reveal-item">
-          <img src="Images/Alfredo/Alfredo_04.jpg" alt="Web design view 4" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
-        </div>
-        <div class="reveal-item">
-          <img src="Images/Alfredo/Alfredo_07.jpg" alt="Web design view 7" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
-        </div>
-      </div>
-
-      <!-- Right Column: 03, 05, 06 -->
-      <div class="col-span-4 md:col-span-6 flex flex-col gap-5 md:gap-[10px]">
-        <div class="reveal-item">
-          <img src="Images/Alfredo/Alfredo_03.jpg" alt="Web design view 3" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
-        </div>
-        <div class="reveal-item">
-          <img src="Images/Alfredo/Alfredo_05.jpg" alt="Web design view 5" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
-        </div>
-        <div class="reveal-item">
-          <img src="Images/Alfredo/Alfredo_06.jpg" alt="Web design view 6" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
-        </div>
-      </div>
+    <div class="w-full flex flex-col gap-[10px] pb-8">
+      <img src="Images/Alfredo/Alfredo_01.jpg" alt="Web design view 1" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+      <img src="Images/Alfredo/Alfredo_02.jpg" alt="Web design view 2" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+      <img src="Images/Alfredo/Alfredo_03.jpg" alt="Web design view 3" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+      <img src="Images/Alfredo/Alfredo_04.jpg" alt="Web design view 4" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+      <img src="Images/Alfredo/Alfredo_05.jpg" alt="Web design view 5" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+      <img src="Images/Alfredo/Alfredo_06.jpg" alt="Web design view 6" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+      <img src="Images/Alfredo/Alfredo_07.jpg" alt="Web design view 7" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
     </div>
-    <!-- Project Details End -->
+    <!-- Mobile navigation -->
+    <div class="w-full flex justify-between items-center pt-8 pb-8">
+      <a href="gastromario.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">&larr; Previous</a>
+      <a href="index.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Back to all work</a>
+      <a href="Photography.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Next &rarr;</a>
+    </div>
   </main>
-'
-    <!-- SHARED FOOTER & BACK TO TOP -->
+
+  <!-- DESKTOP LAYOUT -->
+  <div class="hidden md:block bg-[#f4f4f2]">
+    <aside class="project-sidebar fixed left-8 text-[12px] font-medium font-dm normal-case z-10">
+      <div class="flex flex-col gap-y-12">
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Project</span>
+          <div class="flex flex-col gap-[14px]">
+            <span class="text-zinc-900">Web design</span>
+            <p class="text-zinc-500 leading-relaxed max-w-[200px] whitespace-pre-line">This project is a UI/UX website redesign for Rome's historic Alfredo alla Scrofa. The goal was to blend the restaurant's heritage with a modern digital experience. I centered the redesign on Nielsen's 10 Usability Heuristics, ensuring that the aesthetic remained functional, creating a layout that follows a narrative flow.
+
+<span class="italic">This is an independent student project and is not affiliated with or endorsed by Alfredo alla Scrofa.</span></p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Services</span>
+          <span class="text-zinc-900">Web Design, UI/UX, Brand Identity</span>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Client</span>
+          <span class="text-zinc-900">School project</span>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Year</span>
+          <span class="text-zinc-900">2026</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="ml-[calc(2rem+280px+10px)] pt-32 pb-0 pr-8">
+      <div class="grid grid-cols-12 gap-[10px] pb-12" id="project-images">
+        <img src="Images/Alfredo/Alfredo_01.jpg" alt="Web design view 1" class="col-span-12 w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+
+        <div class="col-span-6 flex flex-col gap-[10px]">
+          <div class="reveal-item">
+            <img src="Images/Alfredo/Alfredo_02.jpg" alt="Web design view 2" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
+          </div>
+          <div class="reveal-item">
+            <img src="Images/Alfredo/Alfredo_04.jpg" alt="Web design view 4" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
+          </div>
+          <div class="reveal-item">
+            <img src="Images/Alfredo/Alfredo_07.jpg" alt="Web design view 7" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="col-span-6 flex flex-col gap-[10px]">
+          <div class="reveal-item">
+            <img src="Images/Alfredo/Alfredo_03.jpg" alt="Web design view 3" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
+          </div>
+          <div class="reveal-item">
+            <img src="Images/Alfredo/Alfredo_05.jpg" alt="Web design view 5" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
+          </div>
+          <div class="reveal-item">
+            <img src="Images/Alfredo/Alfredo_06.jpg" alt="Web design view 6" class="w-full h-auto object-cover bg-zinc-200" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHARED FOOTER & BACK TO TOP -->
   <div class="w-full px-6 md:px-8 bg-[#f4f4f2]">
-    <div class="w-full flex justify-center pt-8 pb-8 md:pt-12 md:pb-12">
-      <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">
-        Back to top
-      </button>
+    <div class="hidden md:flex w-full justify-between items-center pt-12 pb-12">
+      <a href="gastromario.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">&larr; Previous</a>
+      <a href="index.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Back to all work</a>
+      <a href="Photography.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Next &rarr;</a>
     </div>
 
-    <footer class="h-[48px] border-t border-zinc-300 w-full flex flex-row justify-between items-center gap-4 text-[12px] font-light font-dm normal-case text-zinc-500 overflow-x-auto no-scrollbar whitespace-nowrap">
+    <!-- Mobile footer -->
+    <div class="footer-mobile font-dm text-[12px] font-light normal-case text-zinc-500">
+      <div class="footer-left">
+        <span>&copy; 2026 Angela Hedin</span>
+        <span>Rome/Gothenburg</span>
+      </div>
+      <div class="footer-right">
+        <a href="mailto:angelinamh@me.com" class="hover:text-zinc-900 transition-colors">angelinamh@me.com</a>
+        <div class="flex items-center gap-1">
+          <a href="#" class="hover:text-zinc-900 transition-colors">Instagram</a>
+          <span class="footer-social-divider"></span>
+          <a href="#" class="hover:text-zinc-900 transition-colors">Linkedin</a>
+        </div>
+      </div>
+    </div>
+    <!-- Desktop footer -->
+    <footer class="hidden md:flex h-[48px] border-t border-zinc-300 w-full flex-row justify-between items-center gap-4 text-[12px] font-light font-dm normal-case text-zinc-500 overflow-x-auto no-scrollbar whitespace-nowrap">
       <span>&copy; 2026 Angela Hedin</span>
       <span>Rome/Gothenburg</span>
       <a href="mailto:angelinamh@me.com" class="text-zinc-500 hover:text-zinc-900 transition-colors">angelinamh@me.com</a>
-      <div class="flex gap-4 md:gap-8">
+      <div class="flex gap-8">
         <a href="#" class="text-zinc-500 hover:text-zinc-900 transition-colors">Instagram</a>
         <a href="#" class="text-zinc-500 hover:text-zinc-900 transition-colors">Linkedin</a>
       </div>
@@ -118,7 +166,6 @@
   </div>
 
   <script>
-    // Minimal logic for static pages
     document.addEventListener('DOMContentLoaded', () => {
       const revealObserver = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {

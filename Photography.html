@@ -29,118 +29,157 @@
     </nav>
   </header>
 
-  <!-- MAIN APP CONTAINER -->
-  <main id="view-project-detail" class="flex min-h-screen w-full bg-[#f4f4f2] pt-32 pb-0 px-6 md:px-8 flex-col" style=" overflow: hidden;">
-    <!-- Project Details Start -->
-    <!-- Top Information Grid -->
-    <div class="w-full grid grid-cols-4 md:grid-cols-12 gap-y-12 gap-x-5 md:gap-x-[10px] mb-16 md:mb-24 text-[12px] font-medium font-dm normal-case">
-      <!-- Project -->
-      <div class="col-span-1 md:col-span-1">
-        <span class="text-zinc-500">Project</span>
-      </div>
-      <div class="col-span-3 md:col-span-3 flex flex-col gap-4">
-        <span class="text-zinc-900" id="project-Project">Photography</span>
-        <p class="text-zinc-500 leading-relaxed max-w-[280px] whitespace-pre-line" id="project-description">For this project, the focus was on isolating the intricate, skeletal structures of nature and recontextualize them through a bold, primary color palette. As the Lead Photographer, I focused on capturing the fine details and depth of the branches, ensuring the red highlights felt luminous against the matte blue shadows.
+  <!-- MOBILE LAYOUT -->
+  <main id="view-project-detail" class="md:hidden flex min-h-screen w-full bg-[#f4f4f2] pt-32 pb-0 px-6 flex-col" style="overflow: hidden;">
+    <div class="w-full flex flex-col gap-y-12 mb-16 text-[12px] font-medium font-dm normal-case">
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Project</span>
+        <div class="flex flex-col gap-4">
+          <span class="text-zinc-900">Photography</span>
+          <p class="text-zinc-500 leading-relaxed max-w-[280px] whitespace-pre-line">This project reinterprets natures skeletal structures through a bold, primary color palette. As Lead Photographer, the focus remained on capturing fine detail and depth, ensuring luminous red highlights contrast against matte blue shadows.
 
-The project culminated in a physical, accordion-fold print. My collaborator, handled the composition, strategically placing the images to create a continuous flow that changes as the viewer unfolds the piece. The final result is a fusion of Art Direction and precision Printing that explores the link between digital photography and physical&nbsp;art.</p>
-      </div>
-
-      <!-- Services -->
-      <div class="col-span-1 md:col-span-1">
-        <span class="text-zinc-500">Services</span>
-      </div>
-      <div class="col-span-3 md:col-span-2 flex flex-col gap-1 text-zinc-900" id="project-services">
-        <span>Photography, Art Direction, Printing</span>
-      </div>
-
-      <!-- Client -->
-      <div class="col-span-1 md:col-span-1">
-        <span class="text-zinc-500">Client</span>
-      </div>
-      <div class="col-span-3 md:col-span-2 flex flex-col gap-1 text-zinc-900" id="project-client">
-        <span>School Project</span>
-      </div>
-
-      <!-- Year -->
-      <div class="col-span-1 md:col-span-1">
-        <span class="text-zinc-500">Year</span>
-      </div>
-      <div class="col-span-3 md:col-span-1 flex flex-col gap-1 text-zinc-900" id="project-year">
-        <span>2026</span>
-      </div>
-    </div>
-
-    <!-- Vertical Image Sequence -->
-    <div class="w-full grid grid-cols-4 md:grid-cols-12 gap-5 md:gap-[10px] pb-8 md:pb-12 relative" id="project-images">
-      <!-- Left Column: Long Image -->
-      <div class="col-span-4 md:col-start-1 md:col-span-1 relative position:absolute;">
-        <div style="width: 304px; height: 6034px;" class="md:absolute md:top-0 md:left-0 z-30">
-          <img src="Images/Photography/Long.jpg" alt="Long photography" 
-               class="reveal-item object-cover w-full h-full is-revealed" 
-               style="max-width: none;"
-               loading="lazy" />
+The work culminated in a physical, accordion-fold print. The final result fuses Art Direction and precision printing to explore the link between digital photography and physical art.
+</p>
         </div>
       </div>
-
-      <!-- Right side images 1-7 -->
-      <!-- Photography 1: Column 5-12 -->
-      <div class="col-span-4 md:col-start-5 md:col-span-8 reveal-item">
-        <img src="Images/Photography/Photography_1.JPG" alt="Photography 1" 
-             class="w-full h-auto object-cover" loading="lazy" />
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Services</span>
+        <span class="text-zinc-900">Photography, Art Direction, Printing</span>
       </div>
-
-      <!-- Photography 2: Column 4-11 -->
-      <div class="col-span-4 md:col-start-4 md:col-span-8 reveal-item">
-        <img src="Images/Photography/Photography_2.jpg" alt="Photography 2" 
-             class="w-full h-auto object-cover" loading="lazy" />
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Client</span>
+        <span class="text-zinc-900">School Project</span>
       </div>
-
-      <!-- Photography 3: Column 6-12 -->
-      <div class="col-span-4 md:col-start-6 md:col-span-7 reveal-item">
-        <img src="Images/Photography/Photography_3.JPG" alt="Photography 3" 
-               class="w-full h-auto object-cover" loading="lazy" />
-      </div>
-
-      <!-- Photography 4: Column 4-11 -->
-      <div class="col-span-4 md:col-start-4 md:col-span-8 reveal-item">
-        <img src="Images/Photography/Photography_4.JPG" alt="Photography 4" 
-             class="w-full h-auto object-cover" loading="lazy" />
-      </div>
-
-      <!-- Photography 5: Column 5-12 -->
-      <div class="col-span-4 md:col-start-5 md:col-span-8 reveal-item">
-        <img src="Images/Photography/Photography_5.JPG" alt="Photography 5" 
-             class="w-full h-auto object-cover" loading="lazy" />
-      </div>
-
-      <!-- Photography 6: Column 4-11 -->
-      <div class="col-span-4 md:col-start-4 md:col-span-8 reveal-item">
-        <img src="Images/Photography/Photography_6.png" alt="Photography 6" 
-             class="w-full h-auto object-cover" loading="lazy" />
-      </div>
-
-      <!-- Photography 7: Column 5-12 -->
-      <div class="col-span-4 md:col-start-5 md:col-span-8 reveal-item">
-        <img src="Images/Photography/Photography_7.JPG" alt="Photography 7" 
-             class="w-full h-auto object-cover" loading="lazy" />
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Year</span>
+        <span class="text-zinc-900">2026</span>
       </div>
     </div>
-    <!-- Project Details End -->
+    <div class="w-full flex flex-col gap-[10px] pb-8">
+      <img src="Images/Photography/Photography_1.JPG" alt="Photography 1" class="w-full h-auto object-cover reveal-item" loading="lazy" />
+      <img src="Images/Photography/Photography_2.jpg" alt="Photography 2" class="w-full h-auto object-cover reveal-item" loading="lazy" />
+      <img src="Images/Photography/Photography_3.JPG" alt="Photography 3" class="w-full h-auto object-cover reveal-item" loading="lazy" />
+      <img src="Images/Photography/Photography_4.JPG" alt="Photography 4" class="w-full h-auto object-cover reveal-item" loading="lazy" />
+      <img src="Images/Photography/Photography_5.JPG" alt="Photography 5" class="w-full h-auto object-cover reveal-item" loading="lazy" />
+      <img src="Images/Photography/Photography_6.png" alt="Photography 6" class="w-full h-auto object-cover reveal-item" loading="lazy" />
+      <img src="Images/Photography/Photography_7.JPG" alt="Photography 7" class="w-full h-auto object-cover reveal-item" loading="lazy" />
+    </div>
+    <!-- Mobile navigation -->
+    <div class="w-full flex justify-between items-center pt-8 pb-8">
+      <a href="web-design.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">&larr; Previous</a>
+      <a href="index.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Back to all work</a>
+      <a href="disaronno.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Next &rarr;</a>
+    </div>
   </main>
+
+  <!-- DESKTOP LAYOUT -->
+  <div class="hidden md:block bg-[#f4f4f2]" style="overflow: hidden;">
+    <aside class="project-sidebar fixed left-8 text-[12px] font-medium font-dm normal-case z-10">
+      <div class="flex flex-col gap-y-12">
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Project</span>
+          <div class="flex flex-col gap-[14px]">
+            <span class="text-zinc-900">Photography</span>
+            <p class="text-zinc-500 leading-relaxed max-w-[200px] whitespace-pre-line">This project reinterprets natures skeletal structures through a bold, primary color palette. As Lead Photographer, the focus remained on capturing fine detail and depth, ensuring luminous red highlights contrast against matte blue shadows.
+
+The work culminated in a physical, accordion-fold print. The final result fuses Art Direction and precision printing to explore the link between digital photography and physical art.
+</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Services</span>
+          <span class="text-zinc-900">Photography, Art Direction, Printing</span>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Client</span>
+          <span class="text-zinc-900">School Project</span>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Year</span>
+          <span class="text-zinc-900">2026</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="ml-[calc(2rem+280px+10px)] pt-32 pb-0 pr-8">
+      <div class="grid grid-cols-12 gap-[10px] pb-12 relative" id="project-images">
+        <!-- Left Column: Long Image -->
+        <div class="col-start-1 col-span-1 relative">
+          <div style="width: 304px; height: 6034px;" class="absolute top-0 left-0 z-30">
+            <img src="Images/Photography/Long.jpg" alt="Long photography"
+                 class="reveal-item object-cover w-full h-full is-revealed"
+                 style="max-width: none;"
+                 loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Photography 1: Column 5-12 -->
+        <div class="col-start-5 col-span-8 reveal-item">
+          <img src="Images/Photography/Photography_1.JPG" alt="Photography 1" class="w-full h-auto object-cover" loading="lazy" />
+        </div>
+
+        <!-- Photography 2: Column 4-11 -->
+        <div class="col-start-4 col-span-8 reveal-item">
+          <img src="Images/Photography/Photography_2.jpg" alt="Photography 2" class="w-full h-auto object-cover" loading="lazy" />
+        </div>
+
+        <!-- Photography 3: Column 6-12 -->
+        <div class="col-start-6 col-span-7 reveal-item">
+          <img src="Images/Photography/Photography_3.JPG" alt="Photography 3" class="w-full h-auto object-cover" loading="lazy" />
+        </div>
+
+        <!-- Photography 4: Column 4-11 -->
+        <div class="col-start-4 col-span-8 reveal-item">
+          <img src="Images/Photography/Photography_4.JPG" alt="Photography 4" class="w-full h-auto object-cover" loading="lazy" />
+        </div>
+
+        <!-- Photography 5: Column 5-12 -->
+        <div class="col-start-5 col-span-8 reveal-item">
+          <img src="Images/Photography/Photography_5.JPG" alt="Photography 5" class="w-full h-auto object-cover" loading="lazy" />
+        </div>
+
+        <!-- Photography 6: Column 4-11 -->
+        <div class="col-start-4 col-span-8 reveal-item">
+          <img src="Images/Photography/Photography_6.png" alt="Photography 6" class="w-full h-auto object-cover" loading="lazy" />
+        </div>
+
+        <!-- Photography 7: Column 5-12 -->
+        <div class="col-start-5 col-span-8 reveal-item">
+          <img src="Images/Photography/Photography_7.JPG" alt="Photography 7" class="w-full h-auto object-cover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- SHARED FOOTER & BACK TO TOP -->
   <div class="w-full px-6 md:px-8 bg-[#f4f4f2]">
-    <div class="w-full flex justify-center pt-8 pb-8 md:pt-12 md:pb-12">
-      <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">
-        Back to top
-      </button>
+    <div class="hidden md:flex w-full justify-between items-center pt-12 pb-12">
+      <a href="web-design.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">&larr; Previous</a>
+      <a href="index.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Back to all work</a>
+      <a href="disaronno.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Next &rarr;</a>
     </div>
 
-    <footer class="h-[48px] border-t border-zinc-300 w-full flex flex-row justify-between items-center gap-4 text-[12px] font-light font-dm normal-case text-zinc-500 overflow-x-auto no-scrollbar whitespace-nowrap">
+    <!-- Mobile footer -->
+    <div class="footer-mobile font-dm text-[12px] font-light normal-case text-zinc-500">
+      <div class="footer-left">
+        <span>&copy; 2026 Angela Hedin</span>
+        <span>Rome/Gothenburg</span>
+      </div>
+      <div class="footer-right">
+        <a href="mailto:angelinamh@me.com" class="hover:text-zinc-900 transition-colors">angelinamh@me.com</a>
+        <div class="flex items-center gap-1">
+          <a href="#" class="hover:text-zinc-900 transition-colors">Instagram</a>
+          <span class="footer-social-divider"></span>
+          <a href="#" class="hover:text-zinc-900 transition-colors">Linkedin</a>
+        </div>
+      </div>
+    </div>
+    <!-- Desktop footer -->
+    <footer class="hidden md:flex h-[48px] border-t border-zinc-300 w-full flex-row justify-between items-center gap-4 text-[12px] font-light font-dm normal-case text-zinc-500 overflow-x-auto no-scrollbar whitespace-nowrap">
       <span>&copy; 2026 Angela Hedin</span>
       <span>Rome/Gothenburg</span>
       <a href="mailto:angelinamh@me.com" class="text-zinc-500 hover:text-zinc-900 transition-colors">angelinamh@me.com</a>
-      <div class="flex gap-4 md:gap-8">
+      <div class="flex gap-8">
         <a href="#" class="text-zinc-500 hover:text-zinc-900 transition-colors">Instagram</a>
         <a href="#" class="text-zinc-500 hover:text-zinc-900 transition-colors">Linkedin</a>
       </div>
@@ -148,7 +187,6 @@ The project culminated in a physical, accordion-fold print. My collaborator, han
   </div>
 
   <script>
-    // Minimal logic for static pages
     document.addEventListener('DOMContentLoaded', () => {
       const revealObserver = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {

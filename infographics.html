@@ -29,80 +29,119 @@
     </nav>
   </header>
 
-  <!-- MAIN APP CONTAINER -->
-  <main id="view-project-detail" class="flex min-h-screen w-full bg-[#f4f4f2] pt-32 pb-0 px-6 md:px-8 flex-col">
-    <!-- Project Details Start -->
-    <!-- Top Information Grid -->
-    <div class="w-full grid grid-cols-4 md:grid-cols-12 gap-y-12 gap-x-5 md:gap-x-[10px] mb-16 md:mb-24 text-[12px] font-medium font-dm normal-case">
-      <!-- Project -->
-      <div class="col-span-1 md:col-span-1">
-        <span class="text-zinc-500">Project</span>
-      </div>
-      <div class="col-span-3 md:col-span-3 flex flex-col gap-4">
-        <span class="text-zinc-900" id="project-Project">Annual Report</span>
-        <p class="text-zinc-500 leading-relaxed max-w-[280px] whitespace-pre-line" id="project-description">This project focused on designing an annual report for the fictional fashion brand Aurea Group using a provided financial dataset. The goal was to translate complex information into a visually engaging and brand-aligned publication.
+  <!-- MOBILE LAYOUT -->
+  <main id="view-project-detail" class="md:hidden flex min-h-screen w-full bg-[#f4f4f2] pt-32 pb-0 px-6 flex-col">
+    <div class="w-full flex flex-col gap-y-12 mb-16 text-[12px] font-medium font-dm normal-case">
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Project</span>
+        <div class="flex flex-col gap-4">
+          <span class="text-zinc-900">Annual Report</span>
+          <p class="text-zinc-500 leading-relaxed max-w-[280px] whitespace-pre-line">This project focused on designing an annual report for the fictional fashion brand Aurea Group using a provided financial dataset. The goal was to translate complex information into a visually engaging and brand-aligned publication.
 
 To reflect the fashion identity of the brand, I created many of the charts and graphs using fabric textures in Photoshop. A structured grid, refined typography, and clear hierarchy ensured readability while maintaining a strong visual concept.
 
-The result is a balance between creativity and functionality, where data becomes part of the brand’s visual language rather than just supporting content.</p>
+The result is a balance between creativity and functionality, where data becomes part of the brand's visual language rather than just supporting content.</p>
+        </div>
       </div>
-
-      <!-- Services -->
-      <div class="col-span-1 md:col-span-1">
-        <span class="text-zinc-500">Services</span>
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Services</span>
+        <span class="text-zinc-900">Annual Report, Editorial, Printing, Infographics</span>
       </div>
-      <div class="col-span-3 md:col-span-2 flex flex-col gap-1 text-zinc-900" id="project-services">
-        <span>Annual Report, Editorial, Printing, Infographics</span>
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Client</span>
+        <span class="text-zinc-900">School Project</span>
       </div>
-
-      <!-- Client -->
-      <div class="col-span-1 md:col-span-1">
-        <span class="text-zinc-500">Client</span>
-      </div>
-      <div class="col-span-3 md:col-span-2 flex flex-col gap-1 text-zinc-900" id="project-client">
-        <span>School Project</span>
-      </div>
-
-      <!-- Year -->
-      <div class="col-span-1 md:col-span-1">
-        <span class="text-zinc-500">Year</span>
-      </div>
-      <div class="col-span-3 md:col-span-1 flex flex-col gap-1 text-zinc-900" id="project-year">
-        <span>2026</span>
+      <div class="flex gap-4 items-start">
+        <span class="text-zinc-500 w-[60px] shrink-0">Year</span>
+        <span class="text-zinc-900">2026</span>
       </div>
     </div>
-
-    <!-- Vertical Image Sequence -->
-    <div class="w-full grid grid-cols-4 md:grid-cols-12 gap-5 md:gap-[10px] pb-8 md:pb-12" id="project-images">
-      <img src="Images/Infographics_annualreport_overview_landscape.jpg" alt="Infographics view 1" class="col-span-4 md:col-span-12 w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
-      <img src="Images/Infographics_fabric.jpg" alt="Infographics view 2" class="col-span-4 md:col-span-12 w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
-      <img src="Images/Infographics_pictures.jpg" alt="Infographics view 3" class="col-span-4 md:col-span-12 w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
-      <video src="Images/Infographics_annualreport_flip.mp4" class="col-span-4 md:col-span-12 w-full h-auto object-cover bg-zinc-200 reveal-item" autoplay loop muted playsinline></video>
+    <div class="w-full flex flex-col gap-[10px] pb-8">
+      <img src="Images/Infographics_annualreport_overview_landscape.jpg" alt="Infographics view 1" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+      <img src="Images/Infographics_fabric.jpg" alt="Infographics view 2" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+      <img src="Images/Infographics_pictures.jpg" alt="Infographics view 3" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+      <video src="Images/Infographics_annualreport_flip.mp4" class="w-full h-auto object-cover bg-zinc-200 reveal-item" autoplay loop muted playsinline></video>
     </div>
-    <!-- Project Details End -->
+    <!-- Mobile navigation -->
+    <div class="w-full flex justify-between items-center pt-8 pb-8">
+      <a href="disaronno.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">&larr; Previous</a>
+      <a href="index.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Back to all work</a>
+      <a href="gastromario.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Next &rarr;</a>
+    </div>
   </main>
+
+  <!-- DESKTOP LAYOUT -->
+  <div class="hidden md:block bg-[#f4f4f2]">
+    <aside class="project-sidebar fixed left-8 text-[12px] font-medium font-dm normal-case z-10">
+      <div class="flex flex-col gap-y-12">
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Project</span>
+          <div class="flex flex-col gap-[14px]">
+            <span class="text-zinc-900">Annual Report</span>
+            <p class="text-zinc-500 leading-relaxed max-w-[200px] whitespace-pre-line">This project focused on designing an annual report for the fictional fashion brand Aurea Group using a provided financial dataset. The goal was to translate complex information into a visually engaging and brand-aligned publication.
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Services</span>
+          <span class="text-zinc-900">Annual Report, Editorial, Printing, Infographics</span>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Client</span>
+          <span class="text-zinc-900">School Project</span>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="text-zinc-500 w-[60px] shrink-0">Year</span>
+          <span class="text-zinc-900">2026</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="ml-[calc(2rem+280px+10px)] pt-32 pb-0 pr-8">
+      <div class="flex flex-col gap-[10px] pb-12" id="project-images">
+        <img src="Images/Infographics_annualreport_overview_landscape.jpg" alt="Infographics view 1" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+        <img src="Images/Infographics_fabric.jpg" alt="Infographics view 2" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+        <img src="Images/Infographics_pictures.jpg" alt="Infographics view 3" class="w-full h-auto object-cover bg-zinc-200 reveal-item" loading="lazy" />
+        <video src="Images/Infographics_annualreport_flip.mp4" class="w-full h-auto object-cover bg-zinc-200 reveal-item" autoplay loop muted playsinline></video>
+      </div>
+    </div>
+  </div>
 
   <!-- SHARED FOOTER & BACK TO TOP -->
   <div class="w-full px-6 md:px-8 bg-[#f4f4f2]">
-    <div class="w-full flex justify-center pt-8 pb-8 md:pt-12 md:pb-12">
-      <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">
-        Back to top
-      </button>
+    <div class="hidden md:flex w-full justify-between items-center pt-12 pb-12">
+      <a href="disaronno.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">&larr; Previous</a>
+      <a href="index.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Back to all work</a>
+      <a href="gastromario.html" class="text-[12px] font-light font-dm normal-case text-zinc-500 hover:text-zinc-900 transition-colors">Next &rarr;</a>
     </div>
 
-    <footer class="h-[48px] border-t border-zinc-300 w-full flex flex-row justify-between items-center gap-4 text-[12px] font-light font-dm normal-case text-zinc-500 overflow-x-auto no-scrollbar whitespace-nowrap">
+    <!-- Mobile footer -->
+    <div class="footer-mobile font-dm text-[12px] font-light normal-case text-zinc-500">
+      <div class="footer-left">
+        <span>&copy; 2026 Angela Hedin</span>
+        <span>Rome/Gothenburg</span>
+      </div>
+      <div class="footer-right">
+        <a href="mailto:angelinamh@me.com" class="hover:text-zinc-900 transition-colors">angelinamh@me.com</a>
+        <div class="flex items-center gap-1">
+          <a href="https://www.instagram.com/angelahedin?igsh=MWVmOWw3OGJvOXdiZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 transition-colors">Instagram</a>
+          <span class="footer-social-divider"></span>
+          <a href="https://www.linkedin.com/in/angela-hedin-234746194" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 transition-colors">Linkedin</a>
+        </div>
+      </div>
+    </div>
+    <!-- Desktop footer -->
+    <footer class="hidden md:flex h-[48px] border-t border-zinc-300 w-full flex-row justify-between items-center gap-4 text-[12px] font-light font-dm normal-case text-zinc-500 overflow-x-auto no-scrollbar whitespace-nowrap">
       <span>&copy; 2026 Angela Hedin</span>
       <span>Rome/Gothenburg</span>
       <a href="mailto:angelinamh@me.com" class="text-zinc-500 hover:text-zinc-900 transition-colors">angelinamh@me.com</a>
-      <div class="flex gap-4 md:gap-8">
-        <a href="https://www.instagram.com/angelahedin?igsh=MWVmOWw3OGJvOXdiZA%3D%3D&utm_source=qr"     href="https://example.com" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-zinc-900 transition-colors">Instagram</a>
-        <a href="https://www.linkedin.com/in/angela-hedin-234746194"    href="https://example.com" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-zinc-900 transition-colors">Linkedin</a>
+      <div class="flex gap-8">
+        <a href="https://www.instagram.com/angelahedin?igsh=MWVmOWw3OGJvOXdiZA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-zinc-900 transition-colors">Instagram</a>
+        <a href="https://www.linkedin.com/in/angela-hedin-234746194" target="_blank" rel="noopener noreferrer" class="text-zinc-500 hover:text-zinc-900 transition-colors">Linkedin</a>
       </div>
     </footer>
   </div>
 
   <script>
-    // Minimal logic for static pages
     document.addEventListener('DOMContentLoaded', () => {
       const revealObserver = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {

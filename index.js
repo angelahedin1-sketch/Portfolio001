@@ -85,6 +85,15 @@
         setupIntersectionObservers();
         setupScrollListener();
         updateNavState();
+
+        // Restore scroll position if returning from a project page
+        const savedScroll = sessionStorage.getItem('homeScrollY');
+        if (savedScroll !== null) {
+          requestAnimationFrame(() => {
+            window.scrollTo({ top: parseInt(savedScroll, 10), behavior: 'instant' });
+            sessionStorage.removeItem('homeScrollY');
+          });
+        }
       }
     });
 
@@ -104,9 +113,20 @@
 
       PROJECTS.forEach((project, index) => {
         const projectHTML = `
-          <div data-index="${index}" class="project-item w-full px-6 md:px-8 grid grid-cols-4 md:grid-cols-12 gap-5 md:gap-[10px] mb-[60px] last:mb-0 pointer-events-auto items-center group">
-            <!-- Mobile text -->
-            <div class="col-span-4 md:hidden flex justify-between items-center mb-4 text-[12px] font-medium font-dm normal-case w-full">
+          <div data-index="${index}" class="project-item w-full px-6 md:px-8 md:grid md:grid-cols-12 md:gap-[10px] mb-[60px] last:mb-0 pointer-events-auto items-center group">
+
+            <!-- Image -->
+            <a 
+              href="${projectFiles[index]}"
+              onclick="sessionStorage.setItem('homeScrollY', window.scrollY)"
+              class="block col-span-4 md:col-start-3 md:col-span-4 aspect-[4/5] w-full bg-zinc-200 overflow-hidden relative shadow-sm cursor-pointer reveal-item"
+            >
+              <img src="${project.img}" alt="${project.category}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-black/5 transition-colors duration-300 group-hover:bg-black/10"></div>
+            </a>
+
+            <!-- Mobile text (below image) -->
+            <div class="md:hidden flex justify-between items-center mt-[12px] text-[12px] font-medium font-dm normal-case w-full">
               <div class="flex gap-2">
                 <span class="text-zinc-500">Project</span>
                 <span>${project.category}</span>
@@ -116,15 +136,6 @@
                 <span>${project.year}</span>
               </div>
             </div>
-
-            <!-- Image -->
-            <a 
-              href="${projectFiles[index]}"
-              class="col-span-4 md:col-start-3 md:col-span-4 aspect-[4/5] w-full bg-zinc-200 overflow-hidden relative shadow-sm cursor-pointer reveal-item"
-            >
-              <img src="${project.img}" alt="${project.category}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-              <div class="absolute inset-0 bg-black/5 transition-colors duration-300 group-hover:bg-black/10"></div>
-            </a>
           </div>
         `;
         container.insertAdjacentHTML('beforeend', projectHTML);
